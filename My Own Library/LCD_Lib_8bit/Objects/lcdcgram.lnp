@@ -1,0 +1,5 @@
+".\Objects\lcdcgram.obj",
+".\Objects\delay8051.obj",
+".\Objects\lcdcgramprocess.obj" 
+TO ".\Objects\lcdcgram" 
+PRINT(".\Listings\lcdcgram.m51")

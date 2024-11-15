@@ -1,0 +1,319 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    02/10/2022  18:36:20  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\EXTENSION APPS\C51\BIN\BL51.EXE .\Objects\nrf24L01_main_rx.obj TO .\Objects\nrf24L01_rx PRINT (.\Listings\nrf24L01_rx
+>> .m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\nrf24L01_main_rx.obj (NRF24L01_MAIN_RX)
+  D:\EXTENSION APPS\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\EXTENSION APPS\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  D:\EXTENSION APPS\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\nrf24L01_rx (NRF24L01_MAIN_RX)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0007H     UNIT         ?DT?NRF24L01_MAIN_RX
+            DATA    000FH     0005H     UNIT         _DATA_GROUP_
+                    0014H     000CH                  *** GAP ***
+            DATA    0020H     0002H     BIT_ADDR     ?BA?NRF24L01_MAIN_RX
+            IDATA   0022H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     0051H     UNIT         ?PR?NRF_CONFIG?NRF24L01_MAIN_RX
+            CODE    08DDH     002FH     UNIT         ?PR?_SPI_WBUF?NRF24L01_MAIN_RX
+            CODE    090CH     002DH     UNIT         ?C?LIB_CODE
+            CODE    0939H     002CH     UNIT         ?PR?RX_PL?NRF24L01_MAIN_RX
+            CODE    0965H     002AH     UNIT         ?PR?_SPI_W?NRF24L01_MAIN_RX
+            CODE    098FH     0025H     UNIT         ?PR?_SPI_RBUF?NRF24L01_MAIN_RX
+            CODE    09B4H     0014H     UNIT         ?PR?MAIN?NRF24L01_MAIN_RX
+            CODE    09C8H     0011H     UNIT         ?PR?_SPI_WREG?NRF24L01_MAIN_RX
+            CODE    09D9H     000FH     UNIT         ?PR?SPI_DELAY?NRF24L01_MAIN_RX
+            CODE    09E8H     000DH     UNIT         ?PR?_SPI_RREG?NRF24L01_MAIN_RX
+            CODE    09F5H     000BH     UNIT         ?PR?GET_STATUS?NRF24L01_MAIN_RX
+            CODE    0A00H     0008H     UNIT         ?C_INITSEG
+            CODE    0A08H     0007H     UNIT         ?PR?CLEAR_IRQ?NRF24L01_MAIN_RX
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\nrf24L01_rx (NRF24L01_MAIN_RX)
+
+
+SEGMENT                                   DATA_GROUP 
+  +--> CALLED SEGMENT                   START    LENGTH
+-------------------------------------------------------
+?C_C51STARTUP                           -----    -----
+  +--> ?PR?MAIN?NRF24L01_MAIN_RX
+  +--> ?C_INITSEG
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/10/2022  18:36:20  PAGE 2
+
+
+
+?PR?MAIN?NRF24L01_MAIN_RX               -----    -----
+  +--> ?PR?NRF_CONFIG?NRF24L01_MAIN_RX
+  +--> ?PR?RX_PL?NRF24L01_MAIN_RX
+
+?PR?NRF_CONFIG?NRF24L01_MAIN_RX         -----    -----
+  +--> ?PR?_SPI_WREG?NRF24L01_MAIN_RX
+  +--> ?PR?_SPI_WBUF?NRF24L01_MAIN_RX
+
+?PR?_SPI_WREG?NRF24L01_MAIN_RX          -----    -----
+  +--> ?PR?_SPI_W?NRF24L01_MAIN_RX
+
+?PR?_SPI_WBUF?NRF24L01_MAIN_RX          000FH    0005H
+  +--> ?PR?_SPI_W?NRF24L01_MAIN_RX
+
+?PR?RX_PL?NRF24L01_MAIN_RX              -----    -----
+  +--> ?PR?_SPI_WREG?NRF24L01_MAIN_RX
+  +--> ?PR?GET_STATUS?NRF24L01_MAIN_RX
+  +--> ?PR?CLEAR_IRQ?NRF24L01_MAIN_RX
+  +--> ?PR?_SPI_RBUF?NRF24L01_MAIN_RX
+  +--> ?PR?SPI_DELAY?NRF24L01_MAIN_RX
+
+?PR?GET_STATUS?NRF24L01_MAIN_RX         -----    -----
+  +--> ?PR?_SPI_RREG?NRF24L01_MAIN_RX
+
+?PR?_SPI_RREG?NRF24L01_MAIN_RX          -----    -----
+  +--> ?PR?_SPI_W?NRF24L01_MAIN_RX
+
+?PR?CLEAR_IRQ?NRF24L01_MAIN_RX          -----    -----
+  +--> ?PR?_SPI_WREG?NRF24L01_MAIN_RX
+
+?PR?_SPI_RBUF?NRF24L01_MAIN_RX          000FH    0001H
+  +--> ?PR?_SPI_W?NRF24L01_MAIN_RX
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\nrf24L01_rx (NRF24L01_MAIN_RX)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        NRF24L01_MAIN_RX
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0965H         PUBLIC        _spi_W
+  B:00B0H.4       PUBLIC        CE
+  D:0008H         PUBLIC        TX_ADDRESS
+  B:0020H.6       PUBLIC        RX_DR
+  B:0020H.5       PUBLIC        TX_DS
+  C:09B4H         PUBLIC        main
+  C:0939H         PUBLIC        RX_PL
+  D:0020H         PUBLIC        ack
+  C:0A08H         PUBLIC        clear_irq
+  B:00B0H.1       PUBLIC        MOSI
+  B:00B0H.0       PUBLIC        MISO
+  D:000DH         PUBLIC        read_buf
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/10/2022  18:36:20  PAGE 3
+
+
+  C:09D9H         PUBLIC        spi_delay
+  B:0021H.0       PUBLIC        lsb
+  B:0021H.7       PUBLIC        msb
+  C:09F5H         PUBLIC        get_status
+  C:098FH         PUBLIC        _spi_RBUF
+  C:09E8H         PUBLIC        _spi_RREG
+  C:088CH         PUBLIC        nRF_config
+  B:00B0H.2       PUBLIC        SCK
+  C:08DDH         PUBLIC        _spi_WBUF
+  C:09C8H         PUBLIC        _spi_WREG
+  B:00B0H.3       PUBLIC        CSN
+  B:0020H.4       PUBLIC        MAX_RT
+  D:0021H         PUBLIC        buffer
+  -------         PROC          SPI_DELAY
+  C:09D9H         LINE#         77
+  C:09D9H         LINE#         78
+  C:09D9H         LINE#         79
+  C:09E0H         LINE#         80
+  C:09E7H         LINE#         81
+  -------         ENDPROC       SPI_DELAY
+  -------         PROC          GET_STATUS
+  C:09F5H         LINE#         83
+  C:09F5H         LINE#         84
+  C:09F5H         LINE#         85
+  C:09F8H         LINE#         86
+  C:09FFH         LINE#         87
+  -------         ENDPROC       GET_STATUS
+  -------         PROC          CLEAR_IRQ
+  C:0A08H         LINE#         89
+  C:0A08H         LINE#         90
+  C:0A08H         LINE#         91
+  -------         ENDPROC       CLEAR_IRQ
+  -------         PROC          NRF_CONFIG
+  C:088CH         LINE#         94
+  C:088CH         LINE#         95
+  C:088CH         LINE#         96
+  C:088EH         LINE#         97
+  C:0890H         LINE#         98
+  C:0892H         LINE#         107
+  C:0894H         LINE#         108
+  C:089BH         LINE#         109
+  C:08A2H         LINE#         110
+  C:08A9H         LINE#         111
+  C:08B0H         LINE#         112
+  C:08B7H         LINE#         113
+  C:08BEH         LINE#         114
+  C:08C5H         LINE#         115
+  C:08D3H         LINE#         116
+  C:08DAH         LINE#         117
+  C:08DCH         LINE#         119
+  -------         ENDPROC       NRF_CONFIG
+  -------         PROC          _SPI_W
+  D:0007H         SYMBOL        buf
+  -------         DO            
+  D:0006H         SYMBOL        sp
+  -------         ENDDO         
+  C:0965H         LINE#         121
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/10/2022  18:36:20  PAGE 4
+
+
+  C:0965H         LINE#         122
+  C:0965H         LINE#         124
+  C:0967H         LINE#         125
+  C:096AH         LINE#         126
+  C:096AH         LINE#         127
+  C:096EH         LINE#         128
+  C:0974H         LINE#         129
+  C:0976H         LINE#         130
+  C:0979H         LINE#         131
+  C:097FH         LINE#         132
+  C:0981H         LINE#         133
+  C:098CH         LINE#         134
+  C:098EH         LINE#         135
+  -------         ENDPROC       _SPI_W
+  -------         PROC          _SPI_WREG
+  D:0007H         SYMBOL        reg
+  D:0005H         SYMBOL        value
+  -------         DO            
+  D:0004H         SYMBOL        stat
+  -------         ENDDO         
+  C:09C8H         LINE#         137
+  C:09C8H         LINE#         138
+  C:09C8H         LINE#         140
+  C:09CAH         LINE#         141
+  C:09CFH         LINE#         142
+  C:09D4H         LINE#         143
+  C:09D6H         LINE#         144
+  C:09D8H         LINE#         145
+  -------         ENDPROC       _SPI_WREG
+  -------         PROC          _SPI_WBUF
+  D:0007H         SYMBOL        reg
+  D:0010H         SYMBOL        buff
+  D:0013H         SYMBOL        count
+  -------         DO            
+  D:0005H         SYMBOL        stat
+  D:0004H         SYMBOL        sp
+  -------         ENDDO         
+  C:08DDH         LINE#         147
+  C:08E3H         LINE#         148
+  C:08E3H         LINE#         150
+  C:08E5H         LINE#         151
+  C:08EAH         LINE#         152
+  C:08F2H         LINE#         153
+  C:08F2H         LINE#         154
+  C:0904H         LINE#         155
+  C:0907H         LINE#         156
+  C:0909H         LINE#         157
+  C:090BH         LINE#         158
+  -------         ENDPROC       _SPI_WBUF
+  -------         PROC          _SPI_RREG
+  D:0007H         SYMBOL        reg
+  -------         DO            
+  D:0007H         SYMBOL        rd
+  -------         ENDDO         
+  C:09E8H         LINE#         189
+  C:09E8H         LINE#         190
+  C:09E8H         LINE#         192
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/10/2022  18:36:20  PAGE 5
+
+
+  C:09EAH         LINE#         193
+  C:09EDH         LINE#         194
+  C:09F2H         LINE#         195
+  C:09F4H         LINE#         196
+  C:09F4H         LINE#         197
+  -------         ENDPROC       _SPI_RREG
+  -------         PROC          _SPI_RBUF
+  D:0007H         SYMBOL        reg
+  D:0005H         SYMBOL        count
+  -------         DO            
+  D:000FH         SYMBOL        stat
+  D:0004H         SYMBOL        sp
+  -------         ENDDO         
+  C:098FH         LINE#         200
+  C:098FH         LINE#         201
+  C:098FH         LINE#         203
+  C:0991H         LINE#         204
+  C:0996H         LINE#         205
+  C:099DH         LINE#         206
+  C:099DH         LINE#         207
+  C:09A8H         LINE#         208
+  C:09ABH         LINE#         209
+  C:09B1H         LINE#         210
+  C:09B3H         LINE#         211
+  -------         ENDPROC       _SPI_RBUF
+  -------         PROC          RX_PL
+  C:0939H         LINE#         214
+  C:0939H         LINE#         215
+  C:0939H         LINE#         216
+  C:0940H         LINE#         218
+  C:0940H         LINE#         219
+  C:0943H         LINE#         220
+  C:0946H         LINE#         221
+  C:0949H         LINE#         222
+  C:0949H         LINE#         223
+  C:094CH         LINE#         224
+  C:094FH         LINE#         225
+  C:0954H         LINE#         226
+  C:0954H         LINE#         227
+  C:095BH         LINE#         228
+  C:095EH         LINE#         229
+  C:0964H         LINE#         230
+  C:0964H         LINE#         231
+  C:0964H         LINE#         232
+  -------         ENDPROC       RX_PL
+  -------         PROC          MAIN
+  -------         DO            
+  D:0001H         SYMBOL        rec
+  -------         ENDDO         
+  C:09B4H         LINE#         4
+  C:09B4H         LINE#         7
+  C:09B7H         LINE#         8
+  C:09BAH         LINE#         9
+  C:09BAH         LINE#         10
+  C:09BAH         LINE#         11
+  C:09BDH         LINE#         12
+  C:09C3H         LINE#         13
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/10/2022  18:36:20  PAGE 6
+
+
+  C:09C6H         LINE#         14
+  C:09C6H         LINE#         15
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        NRF24L01_MAIN_RX
+
+  -------         MODULE        ?C?CLDOPTR
+  C:090CH         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0155H BYTE (16%) *
+******************************************************************************
+
+Program Size: data=23.0 xdata=0 code=530
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

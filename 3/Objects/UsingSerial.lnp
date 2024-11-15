@@ -1,0 +1,4 @@
+".\Objects\UsingSerial.obj",
+".\Objects\myownlib.obj" 
+TO ".\Objects\UsingSerial" 
+PRINT(".\Listings\UsingSerial.m51")

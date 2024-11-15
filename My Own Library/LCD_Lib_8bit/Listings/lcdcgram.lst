@@ -1,0 +1,35 @@
+C51 COMPILER V9.60.0.0   LCDCGRAM                                                          01/19/2022 15:23:07 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE LCDCGRAM
+OBJECT MODULE PLACED IN .\Objects\lcdcgram.obj
+COMPILER INVOKED BY: D:\Extension Apps\C51\BIN\C51.EXE lcdcgram.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Li
+                    -stings\lcdcgram.lst) TABS(2) OBJECT(.\Objects\lcdcgram.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <delay8051.h>
+   3          #include <lcdcgramprocess.h>
+   4          
+   5          
+   6          void main () {
+   7   1        init();  
+   8   1        lcd_write(33); 
+   9   1        
+  10   1        while (1); 
+  11   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     10    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

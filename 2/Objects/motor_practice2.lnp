@@ -1,0 +1,3 @@
+".\Objects\motor_practice2.obj" 
+TO ".\Objects\motor_practice2" 
+PRINT(".\Listings\motor_practice2.m51")

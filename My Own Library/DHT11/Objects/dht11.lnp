@@ -1,0 +1,6 @@
+".\Objects\dht11_main.obj",
+".\Objects\dht11LibRC.obj",
+".\Objects\lcdLibraryRC.obj",
+".\Objects\delay8051.obj" 
+TO ".\Objects\dht11" 
+PRINT(".\Listings\dht11.m51")

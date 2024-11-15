@@ -1,0 +1,40 @@
+C51 COMPILER V9.60.0.0   MYOWNLIB                                                          01/06/2022 18:09:45 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MYOWNLIB
+OBJECT MODULE PLACED IN .\Objects\myownlib.obj
+COMPILER INVOKED BY: D:\Extension Apps\C51\BIN\C51.EXE myownlib.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Li
+                    -stings\myownlib.lst) TABS(2) OBJECT(.\Objects\myownlib.obj)
+
+line level    source
+
+   1          
+   2          #include <myownlib.h>
+   3          
+   4          void delay_ms(unsigned int count)
+   5          {
+   6   1              unsigned int i;
+   7   1              while(count)
+   8   1              {
+   9   2                      i = 115;
+  10   2                      while(i > 0)
+  11   2                      i--;
+  12   2                      count--;
+  13   2              }
+  14   1      }
+  15          
+  16          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     25    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

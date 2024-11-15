@@ -1,0 +1,69 @@
+C51 COMPILER V9.60.0.0   DELAY8051                                                         02/09/2022 13:47:53 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DELAY8051
+OBJECT MODULE PLACED IN .\Objects\delay8051.obj
+COMPILER INVOKED BY: D:\Extension Apps\C51\BIN\C51.EXE delay8051.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\L
+                    -istings\delay8051.lst) TABS(2) OBJECT(.\Objects\delay8051.obj)
+
+line level    source
+
+   1          
+   2          #include <delay8051.h>
+   3          
+   4          void delay(unsigned int count)
+   5          {
+   6   1              unsigned int i;
+   7   1              while(count)
+   8   1              {
+   9   2                      i = 115;
+  10   2                      while(i > 0)
+  11   2                      i--;
+  12   2                      count--;
+  13   2              }
+  14   1      }
+  15          
+  16          void delay_ms(long delay){
+  17   1          int a;
+  18   1          for ( a = 0; a < delay ; a++){
+  19   2          // read the timer overflow flag // if it counts up then exit while loop
+  20   2          TH0 = 0xFC; // for 1 ms second 0x00; // start from 0
+  21   2          TL0 = 0x18; // for 1 ms second //0x00; // start from 0
+  22   2          TR0 = 1 ; // start the timer
+  23   2          while (TF0==0);
+  24   2          TR0 = 0 ; // stop the timer the timer
+  25   2          TF0 = 0; // reset the overflow flag
+  26   2          }
+  27   1      }
+  28          
+  29          void delay_us (long delay){
+  30   1          int a;
+  31   1          for ( a = 0; a < delay; a++){
+  32   2          // read the timer overflow flag // if it counts up then exit while loop
+  33   2          TH0 = 0xFF; // for 1 ms second 0x00; // start from 0
+  34   2          TL0 = 0xFF; // for 1 ms second //0x00; // start from 0
+  35   2          TR0 = 1 ; // start the timer
+  36   2          while (TF0==0);
+  37   2          TR0 = 0 ; // stop the timer the timer
+  38   2          TF0 = 0; // reset the overflow flag
+  39   2          }
+  40   1      }
+  41          
+  42          
+  43          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    133    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       8
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+C51 COMPILER V9.60.0.0   DELAY8051                                                         02/09/2022 13:47:53 PAGE 2   
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

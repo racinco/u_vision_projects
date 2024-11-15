@@ -1,0 +1,59 @@
+C51 COMPILER V9.60.0.0   TIMER_COUNTERS                                                    01/07/2022 01:49:13 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TIMER_COUNTERS
+OBJECT MODULE PLACED IN .\Objects\timer_counters.obj
+COMPILER INVOKED BY: D:\Extension Apps\C51\BIN\C51.EXE timer_counters.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRIN
+                    -T(.\Listings\timer_counters.lst) TABS(2) OBJECT(.\Objects\timer_counters.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          
+   3          sbit led = P2^0 ;
+   4          
+   5          void init_registers(){
+   6   1          TMOD = 0x01; // 0000 0001 ; 16bit timer mode 
+   7   1      }
+   8          
+   9          void delay_timer(long delay){
+  10   1          int a; 
+  11   1          for ( a = 0; a < delay; a++){
+  12   2          // read the timer overflow flag // if it counts up then exit while loop 
+  13   2          TH0 = 0xFC; // for 1 ms second 0x00; // start from 0 
+  14   2          TL0 = 0x18; // for 1 ms second //0x00; // start from 0 
+  15   2          TR0 = 1 ; // start the timer 
+  16   2          while (TF0==0); 
+  17   2          TR0 = 0 ; // stop the timer the timer 
+  18   2          TF0 = 0; // reset the overflow flag 
+  19   2          }
+  20   1      }
+  21          
+  22          void main (){
+  23   1        
+  24   1        init_registers(); // initilize the registers
+  25   1        P2 = 0x00; 
+  26   1        
+  27   1        while(1){
+  28   2          led = 1 ;
+  29   2          delay_timer(10);
+  30   2          led = 0; 
+  31   2          delay_timer(10); 
+  32   2        }
+  33   1        
+  34   1      }
+  35          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     84    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

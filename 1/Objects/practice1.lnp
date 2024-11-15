@@ -1,0 +1,3 @@
+".\Objects\ledblink_practice1.obj" 
+TO ".\Objects\practice1" 
+PRINT(".\Listings\practice1.m51")

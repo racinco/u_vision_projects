@@ -1,0 +1,58 @@
+C51 COMPILER V9.60.0.0   DHT11_MAIN                                                        01/27/2022 01:22:15 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DHT11_MAIN
+OBJECT MODULE PLACED IN .\Objects\dht11_main.obj
+COMPILER INVOKED BY: D:\Extension Apps\C51\BIN\C51.EXE dht11_main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\
+                    -Listings\dht11_main.lst) TABS(2) OBJECT(.\Objects\dht11_main.obj)
+
+line level    source
+
+   1          /*
+   2          NOTE: For the microncontroller to read the dta in the pins, first we need to place the internal latch HIGH
+             -. 
+   3          For example: 
+   4            P1^0 = 1; place the internal latch high; 
+   5            var = P1^0; read the value
+   6          */
+   7          #include <reg51.h>
+   8          #include <delay8051.h>
+   9          #include <dht11LibRC.h>
+  10          #include <lcdLibraryRC.h>
+  11          
+  12          
+  13          
+  14           
+  15          void main () {
+  16   1        delay(100);
+  17   1        init_4bit();
+  18   1        display();
+  19   1        clear_display();  
+  20   1        return_home(); 
+  21   1        write_oneLetter('A'); 
+  22   1        delay_ms(100);
+  23   1        clear_display(); 
+  24   1        while(1){ 
+  25   2            request(); 
+  26   2            response();
+  27   2             //receive_data(); 
+  28   2            dataSend();
+  29   2            delay_ms(2000);
+  30   2            clear_display(); 
+  31   2        }
+  32   1        
+  33   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     63    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

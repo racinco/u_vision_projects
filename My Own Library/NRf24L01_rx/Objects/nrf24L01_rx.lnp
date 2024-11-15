@@ -1,0 +1,3 @@
+".\Objects\nrf24L01_main_rx.obj" 
+TO ".\Objects\nrf24L01_rx" 
+PRINT(".\Listings\nrf24L01_rx.m51")

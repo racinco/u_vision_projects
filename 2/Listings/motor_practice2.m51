@@ -1,0 +1,103 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    12/28/2021  21:25:57  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\EXTENSION APPS\C51\BIN\BL51.EXE .\Objects\motor_practice2.obj TO .\Objects\motor_practice2 PRINT (.\Listings\motor_pr
+>> actice2.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\motor_practice2.obj (MOTOR_PRACTICE2)
+  D:\EXTENSION APPS\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\EXTENSION APPS\C51\LIB\C51S.LIB (?C?SLCMP)
+
+
+LINK MAP OF MODULE:  .\Objects\motor_practice2 (MOTOR_PRACTICE2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0021H     UNIT         ?PR?MAIN?MOTOR_PRACTICE2
+            CODE    0821H     001AH     UNIT         ?PR?DELAY?MOTOR_PRACTICE2
+            CODE    083BH     0016H     UNIT         ?C?LIB_CODE
+            CODE    0851H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\motor_practice2 (MOTOR_PRACTICE2)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MOTOR_PRACTICE2
+
+?PR?MAIN?MOTOR_PRACTICE2
+  +--> ?PR?DELAY?MOTOR_PRACTICE2
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\motor_practice2 (MOTOR_PRACTICE2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MOTOR_PRACTICE2
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  C:0821H         PUBLIC        delay
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/28/2021  21:25:57  PAGE 2
+
+
+  C:0800H         PUBLIC        main
+  -------         PROC          DELAY
+  -------         DO            
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:0821H         LINE#         5
+  C:0821H         LINE#         6
+  C:0821H         LINE#         8
+  C:083AH         LINE#         9
+  -------         ENDPROC       DELAY
+  -------         PROC          MAIN
+  C:0800H         LINE#         11
+  C:0800H         LINE#         12
+  C:0800H         LINE#         13
+  C:0803H         LINE#         14
+  C:0805H         LINE#         15
+  C:0805H         LINE#         17
+  C:0808H         LINE#         18
+  C:080BH         LINE#         20
+  C:080EH         LINE#         22
+  C:0811H         LINE#         23
+  C:0813H         LINE#         24
+  C:0816H         LINE#         26
+  C:0819H         LINE#         27
+  C:081CH         LINE#         29
+  C:081FH         LINE#         35
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MOTOR_PRACTICE2
+
+  -------         MODULE        ?C?SLCMP
+  C:083BH         PUBLIC        ?C?SLCMP
+  -------         ENDMOD        ?C?SLCMP
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 003BH BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=96
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

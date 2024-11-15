@@ -1,0 +1,1 @@
+"delay8051.c" OPTIMIZE (8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\delay8051.lst) TABS (2) OBJECT(.\Objects\delay8051.obj)

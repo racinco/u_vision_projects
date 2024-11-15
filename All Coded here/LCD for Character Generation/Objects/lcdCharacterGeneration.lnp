@@ -1,0 +1,4 @@
+".\Objects\main.obj",
+".\Objects\delay8051.obj" 
+TO ".\Objects\lcdCharacterGeneration" 
+PRINT(".\Listings\lcdCharacterGeneration.m51")

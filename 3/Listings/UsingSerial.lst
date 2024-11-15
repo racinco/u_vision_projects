@@ -1,0 +1,103 @@
+C51 COMPILER V9.60.0.0   USINGSERIAL                                                       01/06/2022 18:17:35 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE USINGSERIAL
+OBJECT MODULE PLACED IN .\Objects\UsingSerial.obj
+COMPILER INVOKED BY: D:\Extension Apps\C51\BIN\C51.EXE UsingSerial.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.
+                    -\Listings\UsingSerial.lst) TABS(2) OBJECT(.\Objects\UsingSerial.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <myownlib.h>
+   3          
+   4          sbit led = P2^0;
+   5          void uart_init (){
+   6   1        TMOD =  0x20; // 0010 0000
+   7   1        
+   8   1        // 0101 0000 // ( Mode: 8bit UART, Variable by timer 1) 
+   9   1        //REN = 1 ( enable 8051 to receive data ) 
+  10   1        SCON = 0x50; 
+  11   1        
+  12   1        TH1 = 0xFD; //Baud rate : (255 + 1) - 0xFD(253) = 3 ticks before restart
+  13   1        TL1 = 0xFD; // Same as TH1
+  14   1        
+  15   1        TR1 = 1 ; // start the timer
+  16   1      }
+  17          
+  18          void uart_write(unsigned char str){
+  19   1        // writes a single character in SBUF
+  20   1        
+  21   1        SBUF = str; // send string character in SBUF
+  22   1        while(TI == 0); // wait confirmation of sending 
+  23   1        
+  24   1        TI = 0 ; // manually reset the Transmission Flag
+  25   1        
+  26   1      }
+  27          
+  28          void uart_write_string (unsigned char *str){
+  29   1        while(*str){
+  30   2          uart_write(*str); 
+  31   2          str++;
+  32   2        }
+  33   1      }
+  34          
+  35          
+  36          
+  37          unsigned char uart_read(){
+  38   1      
+  39   1          while(RI ==0);    // check if RI is active  
+  40   1          RI = 0 ; // reset the RI for the next transmission
+  41   1          return SBUF;
+  42   1      }
+  43          
+  44          
+  45          unsigned char read;
+  46          
+  47          
+  48          void main() {
+  49   1       
+  50   1        
+  51   1        P2 = 0x00;
+  52   1        uart_init(); 
+  53   1        uart_write_string("Hello Serial Port"); // take note that a single character 'a', meanwhile "a" is a dobl
+             -e character with 'a' & 0 (null character)
+C51 COMPILER V9.60.0.0   USINGSERIAL                                                       01/06/2022 18:17:35 PAGE 2   
+
+  54   1        
+  55   1        while(1){
+  56   2          int a ;
+  57   2          //read = uart_read (); // reads the input from the virtual terminal 
+  58   2          // write again the character but add 1 
+  59   2          
+  60   2          led = 1;
+  61   2          delay_ms(500); 
+  62   2      
+  63   2          a= 254;
+  64   2          uart_write(a);
+  65   2          led = 0 ;
+  66   2          delay_ms(500); 
+  67   2        }
+  68   1        
+  69   1      
+  70   1      }
+  71          
+  72          
+  73          
+  74          
+  75          
+  76          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     96    ----
+   CONSTANT SIZE    =     18    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
